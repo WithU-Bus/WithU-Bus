@@ -61,7 +61,7 @@
         </div>
         <!-- Topbar End -->
 
-    <!-- Navbar Start -->
+    <!-- Navbar & Carousel Start 상단 네비게이션바 설정-->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
             <a href="홈.html" class="navbar-brand p-0">
@@ -75,7 +75,18 @@
                     <a href="홈.html" class="nav-item nav-link">홈</a>
                     <a href="소개.html" class="nav-item nav-link">WITH-U BUS 소개</a>
                     <a href="이용안내.html" class="nav-item nav-link">이용안내</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">노선/정류장 검색</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="420번.html" class="dropdown-item">420번</a>
+                            <a href="1203번.html" class="dropdown-item">1203번</a>
+                        </div>
+                    </div> 
+                    
+                    <!-- 
                     <a href="노선정류장검색.html" class="nav-item nav-link">노선/정류장 검색</a>
+                    -->
+                    
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">고객소리</a>
                         <div class="dropdown-menu m-0">
@@ -120,31 +131,35 @@
     </div>
     <!-- Full Screen Search End -->
 
-    <!-- Quote Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-7">
                     <div class="section-title position-relative pb-3 mb-5">
-                        <h5 class="fw-bold text-primary text-uppercase">Request A Quote</h5>
-                        <h1 class="mb-0">Need A Free Quote? Please Feel Free to Contact Us</h1>
+                        <h5 class="fw-bold text-primary text-uppercase">불편사항</h5>
+                        <h1 class="mb-0">WITH-U 버스 이용에 불편사항이 있으시다면, 언제든지 얘기해주세요!
+                        </h1>
+
                     </div>
                     <div class="row gx-3">
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.1s">
-                            <h5 class="mb-4"><i class="fa fa-reply text-primary me-3"></i>Reply within 24 hours</h5>
+                            <h5 class="mb-4"><i class="fa fa-reply text-primary me-3"></i>24시간 이내 답장</h5>
                         </div>
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.1s">
-                            <h5 class="mb-4"><i class="fa fa-phone-alt text-primary me-3"></i>24 hrs telephone support</h5>
+                            <h5 class="mb-4"><i class="fa fa-phone-alt text-primary me-3"></i>24시간 이내 회신전화</h5>
                         </div>
                     </div>
-                    <p class="mb-4">Eirmod sed tempor lorem ut dolores. Aliquyam sit sadipscing kasd ipsum. Dolor ea et dolore et at sea ea at dolor, justo ipsum duo rebum sea invidunt voluptua. Eos vero eos vero ea et dolore eirmod et. Dolores diam duo invidunt lorem. Elitr ut dolores magna sit. Sea dolore sanctus sed et. Takimata takimata sanctus sed.</p>
+                    <p class="mb-4">WITH-U 버스는 장애인분들을 위해 개발된 버스입니다.</br>
+                                    불편사항이 있으시다면 아래의 전화번호 +051-123-4567을 통해 문의하시거나,</br>
+                                    옆 이메일 문의창을 통해 남겨주신다면 24시간 이내에 답변드릴 것을 약속드립니다.</br>
+                                    WITH-U 버스는 여러분들의 이야기를 듣고, 개선해나가도록 노력하겠습니다. 감사합니다.</p>
                     <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.1s">
                         <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
                             <i class="fa fa-phone-alt text-white"></i>
                         </div>
                         <div class="ps-4">
-                            <h5 class="mb-2">Call to ask any question</h5>
-                            <h4 class="text-primary mb-0">+012 345 6789</h4>
+                            <h5 class="mb-2">문의사항</h5>
+                            <h4 class="text-primary mb-0">+051-123-4567</h4>
                         </div>
                     </div>
                 </div>
@@ -153,24 +168,24 @@
                         <form>
                             <div class="row g-3">
                                 <div class="col-xl-12">
-                                    <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">
+                                    <input type="text" class="form-control bg-light border-0" placeholder="이름" style="height: 55px;">
                                 </div>
                                 <div class="col-12">
-                                    <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">
+                                    <input type="email" class="form-control bg-light border-0" placeholder="이메일주소" style="height: 55px;">
                                 </div>
                                 <div class="col-12">
                                     <select class="form-select bg-light border-0" style="height: 55px;">
-                                        <option selected>Select A Service</option>
-                                        <option value="1">Service 1</option>
-                                        <option value="2">Service 2</option>
-                                        <option value="3">Service 3</option>
+                                        <option selected>불편사항</option>
+                                        <option value="1">배차간격</option>
+                                        <option value="2">정류장</option>
+                                        <option value="3">그 외 불편사항</option>
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control bg-light border-0" rows="3" placeholder="Message"></textarea>
+                                    <textarea class="form-control bg-light border-0" rows="3" placeholder="불편사항을 입력해주세요"></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-dark w-100 py-3" type="submit">Request A Quote</button>
+                                    <button class="btn btn-dark w-100 py-3" type="submit">전송하기</button>
                                 </div>
                             </div>
                         </form>
