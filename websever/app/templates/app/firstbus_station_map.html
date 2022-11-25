@@ -19,7 +19,7 @@
     });
     marker.setMap(map);
 
-    var str_html = "<table border='1'><tr><td>구분</td><td>기관명</td><td>도로명주소</td><td>전화번호</td><td>비고</td></tr>";
+    var str_html = "<table border='1'><tr><td>구분</td><td>기관명</td><td>도로명주소</td><td>전화번호</td></tr>";
 
     $.ajax({
         url: '/infra_map_data/',
@@ -35,7 +35,7 @@
             });
 
             //
-            str_html += "<tr><td>"+res[i].TYPE+"</td><td>"+res[i].NAME+"</td><td>"+res[i].ADDRESS+"</td><td>"+res[i].Tel+"</td><td>"+res[i].MEDICAL+"</td></tr>";                 
+            str_html += "<tr><td>"+res[i].TYPE+"</td><td>"+res[i].NAME+"</td><td>"+res[i].ADDRESS+"</td><td>"+res[i].Tel+"</td></tr>";                 
           } 
           str_html += "</table>";
           //alert(str_html);
