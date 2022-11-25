@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 
 <head>
@@ -9,7 +10,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/BUS.png" rel="icon">
+    <link href="{%static '/app/img/BUS.png' %}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,14 +22,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="{% static '/app/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static '/app/lib/animate/animate.min.css' %}" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static '/app/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{% static '/app/css/style.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -63,8 +64,8 @@
     <!-- Topbar End -->
 
 
-     <!-- Navbar & Carousel Start 상단 네비게이션바 설정-->
-     <div class="container-fluid position-relative p-0">
+    <!-- Navbar & Carousel Start 상단 네비게이션바 설정-->
+    <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
             <a href="홈.html" class="navbar-brand p-0">
                 <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>WITH-U BUS</h1>
@@ -76,9 +77,9 @@
                 <div class="navbar-nav ms-auto py-0">
                     <a href="홈.html" class="nav-item nav-link">홈</a>
                     <a href="소개.html" class="nav-item nav-link">WITH-U BUS 소개</a>
-                    <a href="이용안내.html" class="nav-item nav-link active">이용안내</a>
+                    <a href="이용안내.html" class="nav-item nav-link">이용안내</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">노선/정류장 검색</a>
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">노선/정류장 검색</a>
                         <div class="dropdown-menu m-0">
                             <a href="420번.html" class="dropdown-item">420번</a>
                             <a href="1203번.html" class="dropdown-item">1203번</a>
@@ -102,21 +103,16 @@
                 <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
             </div>
         </nav>
-
-
         <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
             <div class="row py-5">
                 <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-4 text-white animated zoomIn">이용안내</h1>
-                    <a href="" class="h5 text-white">WITH-U BUS 이용요금 방법 안내</a>
-                        <!--<i class="far fa-circle text-white px-2"></i>
-                    <a href="" class="h5 text-white">Features</a> -->
+                    <h1 class="display-4 text-white animated zoomIn">노선/정류장 검색</h1>
+                    <a href="" class="h5 text-white">WITH-U BUS</a>
                 </div>
             </div>
         </div>
     </div>
     <!-- Navbar End -->
-
 
 
     <!-- Full Screen Search Start 검색기능 활성화-->
@@ -138,117 +134,201 @@
     <!-- Full Screen Search End -->
 
 
-    <!-- Features Start -->
+    <!-- Service Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 1000px;">
-                <h5 class="fw-bold text-primary text-uppercase">WITH-U BUS</h5>
-                <h1 class="mb-0">차세대는 장애인분들에게 이동편의를 제공하여</h1>
-                <h1 class="mb-0">장애인분들의 사회참여 확대를 위해 노력하고 있습니다.</h1>
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Our Services</h5>
+                <h1 class="mb-0">Custom IT Solutions for Your Successful Business</h1>
             </div>
             <div class="row g-5">
-                <div class="col-lg-4">
-                    <div class="row g-5">
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.1s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                                <i class="fa fa-cubes text-white"></i>
-                            </div>
-                            <h4>이용대상</h4>
-                            <p class="mb-0">지체, 청각, 시각 등 이동에 불편을 겪는 장애인</p>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-shield-alt text-white"></i>
                         </div>
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.1s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                                <i class="fa fa-award text-white"></i>
-                            </div>
-                            <h4>이용요금</h4>
-                            <p class="mb-0">성인 : 현금 1,300원 / 카드 1,200원</p>
-                            <p class="mb-0">청소년 : 현금 900원 / 카드 800원</p>
-                            <p class="mb-0">어린이 : 현금 400원 / 카드 350원</p>    
-                        </div>
+                        <h4 class="mb-3">Cyber Security</h4>
+                        <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore sed</p>
+                        <a class="btn btn-lg btn-primary rounded" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-4  wow zoomIn" data-wow-delay="0.1s" style="min-height: 350px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="img/이용안내.png" style="object-fit: cover;">
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-chart-pie text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Data Analytics</h4>
+                        <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore sed</p>
+                        <a class="btn btn-lg btn-primary rounded" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="row g-5">
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.1s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                                <i class="fa fa-users-cog text-white"></i>
-                            </div>
-                            <h4>배차간격</h4>
-                            <p class="mb-0">- 평일 출퇴근 시간 : 15분 </br>(오전 08:00 ~ 오전 10:00 / 오후 5:00 ~ 오후 7:00) </br> - 평일 평시 / 주말 및 공휴일 : 30분 </p>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-code text-white"></i>
                         </div>
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.1s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                                <i class="fa fa-phone-alt text-white"></i>
-                            </div>
-                            <h4>문의사항</h4>
-                            <p class="mb-0"> +051-123-4567</br>
-                                            withU@naver.com</p>
+                        <h4 class="mb-3">Web Development</h4>
+                        <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore sed</p>
+                        <a class="btn btn-lg btn-primary rounded" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fab fa-android text-white"></i>
                         </div>
+                        <h4 class="mb-3">Apps Development</h4>
+                        <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore sed</p>
+                        <a class="btn btn-lg btn-primary rounded" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-search text-white"></i>
+                        </div>
+                        <h4 class="mb-3">SEO Optimization</h4>
+                        <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore sed</p>
+                        <a class="btn btn-lg btn-primary rounded" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="position-relative bg-primary rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-5">
+                        <h3 class="text-white mb-3">Call Us For Quote</h3>
+                        <p class="text-white mb-3">Clita ipsum magna kasd rebum at ipsum amet dolor justo dolor est magna stet eirmod</p>
+                        <h2 class="text-white mb-0">+012 345 6789</h2>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Features Start -->
+    <!-- Service End -->
 
 
-    <!-- Vendor Start -->
+    <!-- Testimonial Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Testimonial</h5>
+                <h1 class="mb-0">What Our Clients Say About Our Digital Services</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/testimonial-1.jpg" style="width: 60px; height: 60px;" >
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Client Name</h4>
+                            <small class="text-uppercase">Profession</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/testimonial-2.jpg" style="width: 60px; height: 60px;" >
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Client Name</h4>
+                            <small class="text-uppercase">Profession</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/testimonial-3.jpg" style="width: 60px; height: 60px;" >
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Client Name</h4>
+                            <small class="text-uppercase">Profession</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/testimonial-4.jpg" style="width: 60px; height: 60px;" >
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Client Name</h4>
+                            <small class="text-uppercase">Profession</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+     <!-- Vendor Start -->
+     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5 mb-5">
             <div class="bg-white">
                 <div class="owl-carousel vendor-carousel">
                     <a href="https://www.gangseosw.or.kr/">
-                        <img src="img/강서구.png" alt="">
+                        <img src="{% static '/app/img/강서구.png' %}" alt="">
                     </a>
                     <a href="https://www.gjrc.or.kr/">
-                        <img src="img/금정구.png" alt="">
+                        <img src="{% static '/app/img/금정구.png' %}" alt="">
                     </a>
                     <a href="https://www.gijangbok.or.kr/">
-                        <img src="img/기장.png" alt="">
+                        <img src="{% static '/app/img/기장.png' %}" alt="">
                     </a>
                     <a href="http://www.namgurc.or.kr/">
-                        <img src="img/남구.png" alt="">
+                        <img src="{% static '/app/img/남구.png' %}" alt="">
                     </a>
                     <a href="https://www.dongnaerc.or.kr/00main/main.php">
-                        <img src="img/동래구.png" alt="">
+                        <img src="{% static '/app/img/동래구.png' %}" alt="">
                     </a>
                     <a href="http://www.dgwc.or.kr/">    
-                        <img src="img/동구.png" alt="">
+                        <img src="{% static '/app/img/동구.png' %}" alt="">
                     </a>
                     <a href="https://bokji.chambokji.org/">
-                        <img src="img/부산진구.png" alt="">\
+                        <img src="{% static '/app/img/부산진구.png' %}" alt="">\
                     </a>
                     <a href="http://www.bgrc.or.kr/">
-                        <img src="img/북구.png" alt="">
+                        <img src="{% static '/app/img/북구.png' %}" alt="">
                     </a>
                     <a href=" http://www.sasangrc.or.kr/html/main.php">
-                        <img src="img/사상구.png" alt="">
+                        <img src="{% static '/app/img/사상구.png' %}" alt="">
                     </a>
                     <a href="http://www.saharc.or.kr/main/main.html">
-                        <img src="img/사하구.png" alt="">
+                        <img src="{% static '/app/img/사하구.png' %}" alt="">
                     </a>
                     <a href="http://www.seogurc.or.kr/">
-                        <img src="img/서구.png" alt="">
+                        <img src="{% static '/app/img/서구.png' %}" alt="">
                     </a>
                     <a href="http://www.jungbok.or.kr/">
-                        <img src="img/중구.png" alt="">
+                        <img src="{% static '/app/img/중구.png' %}" alt="">
                     </a>
                     <a href="http://syrc.or.kr/">
-                        <img src="img/수영구.png" alt="">
+                        <img src="{% static '/app/img/수영구.png' %}" alt="">
                     </a>
                     <a href="https://www.rehabcenter.or.kr:450/">
-                        <img src="img/연제구.png" alt="">
+                        <img src="{% static '/app/img/연제구.png' %}" alt="">
                     </a>
                     <a href="https://www.yeongdorc.or.kr/">
-                        <img src="img/영도구.png" alt="">
+                        <img src="{% static '/app/img/영도구.png' %}" alt="">
                     </a>
                     <a href="http://togetherhaeundae.or.kr/">
-                        <img src="img/해운대구.png" alt="">
+                        <img src="{% static '/app/img/해운대구.png' %}" alt="">
                     </a>
                 </div>
             </div>
@@ -355,14 +435,14 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="{% static '/app/lib/wow/wow.min.js' %}"></script>
+    <script src="{% static '/app/lib/easing/easing.min.js' %}"></script>
+    <script src="{% static '/app/lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static '/app/lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static '/app/lib/owlcarousel/owl.carousel.min.js' %}"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="{% static '/app/js/main.js' %}"></script>
 </body>
 
 </html>

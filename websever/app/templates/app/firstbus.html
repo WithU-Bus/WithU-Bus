@@ -1,0 +1,22 @@
+<div class="explain">
+    <h1 class="title">1203번</h1>
+    <h4 class="sub_title">운행지역 부산 | 해운대 <-> 사상</h4>
+        {% include "app/first_map.html" %}
+        <body>
+            <table border='1'>
+                <tr>
+                    <td>정류소명</td>
+                </tr>
+                {% for item in my_data %}
+                <tr>
+                    <td>
+                        <a href="/firstbus_station/{{item.NUMBER}}/">{{item.NAME}}</a> <br> {{item.UNIQUEID}}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </body>
+</div>
+
+
+

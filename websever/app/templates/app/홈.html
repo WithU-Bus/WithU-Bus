@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 
 <head>
@@ -22,14 +23,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="{% static '/app/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static '/app/lib/animate/animate.min.css' %}" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static '/app/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{% static '/app/css/style.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -67,7 +68,7 @@
     <!-- Navbar & Carousel Start 상단 네비게이션바 설정-->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-            <a href="홈.html" class="navbar-brand p-0">
+            <a href="/홈/" class="navbar-brand p-0">
                 <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>WITH-U BUS</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -75,7 +76,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="홈.html" class="nav-item nav-link active">홈</a>
+                    <a href="/홈/" class="nav-item nav-link active">홈</a>
                     <a href="소개.html" class="nav-item nav-link">WITH-U BUS 소개</a>
                     <a href="이용안내.html" class="nav-item nav-link">이용안내</a>
                     <div class="nav-item dropdown">
@@ -109,7 +110,7 @@
         <div class="carousel-inner">
             <!-- 메인페이지 상단 슬라이드 화면1-->
             <div class="carousel-item active">
-                <img class="w-100" src="img/메인1.png" alt="Image">
+                <img class="w-100" src="{% static '/app/img/메인1.png' %}" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
                         <h2 class="text-white text-uppercase mb-3 animated slideInDown">WITH-U BUS</h2>
@@ -121,7 +122,7 @@
             </div>
             <!-- 메인페이지 상단 슬라이드 화면2-->
             <div class="carousel-item">
-                <img class="w-100" src="img/메인2.jpg" alt="Image">
+                <img class="w-100" src="{% static '/app/img/메인2.jpg' %}" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
                         <h2 class="text-white text-uppercase mb-3 animated slideInDown">WITH-U BUS</h2>
@@ -242,7 +243,7 @@
                 </div>
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="img/장애인2.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{% static '/app/img/장애인2.jpg' %}" style="object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -281,7 +282,7 @@
                 </div>
                 <div class="col-lg-4  wow zoomIn" data-wow-delay="0.1s" style="min-height: 350px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="img/이용안내.png" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{% static '/app/img/이용안내.png' %}" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -785,58 +786,58 @@
     Blog Start -->
 
 
-    <!-- Vendor Start / 메인페이지 하단 협찬배너-->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+     <!-- Vendor Start -->
+     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5 mb-5">
             <div class="bg-white">
                 <div class="owl-carousel vendor-carousel">
                     <a href="https://www.gangseosw.or.kr/">
-                        <img src="img/강서구.png" alt="">
+                        <img src="{% static '/app/img/강서구.png' %}" alt="">
                     </a>
                     <a href="https://www.gjrc.or.kr/">
-                        <img src="img/금정구.png" alt="">
+                        <img src="{% static '/app/img/금정구.png' %}" alt="">
                     </a>
                     <a href="https://www.gijangbok.or.kr/">
-                        <img src="img/기장.png" alt="">
+                        <img src="{% static '/app/img/기장.png' %}" alt="">
                     </a>
                     <a href="http://www.namgurc.or.kr/">
-                        <img src="img/남구.png" alt="">
+                        <img src="{% static '/app/img/남구.png' %}" alt="">
                     </a>
                     <a href="https://www.dongnaerc.or.kr/00main/main.php">
-                        <img src="img/동래구.png" alt="">
+                        <img src="{% static '/app/img/동래구.png' %}" alt="">
                     </a>
                     <a href="http://www.dgwc.or.kr/">    
-                        <img src="img/동구.png" alt="">
+                        <img src="{% static '/app/img/동구.png' %}" alt="">
                     </a>
                     <a href="https://bokji.chambokji.org/">
-                        <img src="img/부산진구.png" alt="">\
+                        <img src="{% static '/app/img/부산진구.png' %}" alt="">\
                     </a>
                     <a href="http://www.bgrc.or.kr/">
-                        <img src="img/북구.png" alt="">
+                        <img src="{% static '/app/img/북구.png' %}" alt="">
                     </a>
                     <a href=" http://www.sasangrc.or.kr/html/main.php">
-                        <img src="img/사상구.png" alt="">
+                        <img src="{% static '/app/img/사상구.png' %}" alt="">
                     </a>
                     <a href="http://www.saharc.or.kr/main/main.html">
-                        <img src="img/사하구.png" alt="">
+                        <img src="{% static '/app/img/사하구.png' %}" alt="">
                     </a>
                     <a href="http://www.seogurc.or.kr/">
-                        <img src="img/서구.png" alt="">
+                        <img src="{% static '/app/img/서구.png' %}" alt="">
                     </a>
                     <a href="http://www.jungbok.or.kr/">
-                        <img src="img/중구.png" alt="">
+                        <img src="{% static '/app/img/중구.png' %}" alt="">
                     </a>
                     <a href="http://syrc.or.kr/">
-                        <img src="img/수영구.png" alt="">
+                        <img src="{% static '/app/img/수영구.png' %}" alt="">
                     </a>
                     <a href="https://www.rehabcenter.or.kr:450/">
-                        <img src="img/연제구.png" alt="">
+                        <img src="{% static '/app/img/연제구.png' %}" alt="">
                     </a>
                     <a href="https://www.yeongdorc.or.kr/">
-                        <img src="img/영도구.png" alt="">
+                        <img src="{% static '/app/img/영도구.png' %}" alt="">
                     </a>
                     <a href="http://togetherhaeundae.or.kr/">
-                        <img src="img/해운대구.png" alt="">
+                        <img src="{% static '/app/img/해운대구.png' %}" alt="">
                     </a>
                 </div>
             </div>
@@ -944,14 +945,14 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="{% static '/app/lib/wow/wow.min.js' %}"></script>
+    <script src="{% static '/app/lib/easing/easing.min.js' %}"></script>
+    <script src="{% static '/app/lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static '/app/lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static '/app/lib/owlcarousel/owl.carousel.min.js' %}"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="{% static '/app/js/main.js' %}"></script>
 </body>
 
 </html>

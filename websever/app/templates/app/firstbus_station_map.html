@@ -1,0 +1,47 @@
+{% block content %}
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<div class="jumbotron">
+    <div class="container text-center">
+        <div id="map" style="width:500px; height:400px; margin:0 auto;"></div>
+    </div>
+</div>
+<script src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=230cf9e42aefd727dd89280fc354074b"></script>
+<script>
+    var container = document.getElementById('map');
+    var options = {
+        center: new kakao.maps.LatLng({{ station.lat }}, {{ station.lng }}),
+        level: 5
+    };
+    var map = new kakao.maps.Map(container, options);
+    var markerPosition = new kakao.maps.LatLng({{ station.lat }}, {{ station.lng }});
+    var marker = new kakao.maps.Marker({
+        position: markerPosition
+    });
+    marker.setMap(map);
+
+    var str_html = "<table border='1'><tr><td>구분</td><td>기관명</td><td>도로명주소</td><td>전화번호</td><td>비고</td></tr>";
+
+    $.ajax({
+        url: '/infra_map_data/',
+        data: {
+            'lat' : {{ station.lat }} , 'lng' : {{ station.lng }}
+        },
+        success: function(res) {
+          for(var i = 0; i < res.length; i++) {
+            var marker = new kakao.maps.Marker({
+                map : map, // 마커를 표시할 지도
+                position : new kakao.maps.LatLng(res[i].lat, res[i].lng),
+                title : res[i].title,
+            });
+
+            //
+            str_html += "<tr><td>"+res[i].TYPE+"</td><td>"+res[i].NAME+"</td><td>"+res[i].ADDRESS+"</td><td>"+res[i].Tel+"</td><td>"+res[i].MEDICAL+"</td></tr>";                 
+          } 
+          str_html += "</table>";
+          //alert(str_html);
+          document.getElementById('view_area').innerHTML=str_html;
+        }
+        
+      });
+</script>
+{% endblock %}
