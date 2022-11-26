@@ -40,12 +40,13 @@ class Infra(models.Model):
     lng = models.FloatField()
     Tel = models.CharField(max_length=20)
     NAME = models.CharField(max_length=20)
+    URL = models.CharField(max_length=20)
 
     class Meta:
         db_table = 'infra'
         app_label = 'app'
-        ordering = ['NUMBER', 'TYPE', 'ADDRESS', 'lat', 'lng', 'Tel', 'NAME']
+        ordering = ['NUMBER', 'TYPE', 'ADDRESS', 'lat', 'lng', 'Tel', 'NAME', 'URL']
         managed = False
     
     def __str__(self):
-        return(self.NUMBER, self.TYPE, self.ADDRESS, self.lat, self.lng, self.Tel, self.NAME)
+        return(self.NUMBER, self.TYPE, self.ADDRESS, self.lat, self.lng, self.Tel, self.NAME, self.URL)
