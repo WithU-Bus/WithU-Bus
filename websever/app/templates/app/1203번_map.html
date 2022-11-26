@@ -1,24 +1,20 @@
 {% block content %}
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <div class="container text-center">
-  <div id="map" style="width:500px; height:400px; margin:0 auto;"></div>
+  <div id="map" style="width:700px; height:500px; margin:0 auto;"></div>
 </div>
 <script src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=230cf9e42aefd727dd89280fc354074b"></script>
 <script>
-  navigator.geolocation.getCurrentPosition((position)=>{
-    const lat = position.coords.latitude;
-    const lng = position.coords.longitude;
-
   var container = document.getElementById('map');
-  var options = {
-    center : new kakao.maps.LatLng(lat, lng),
-    level : 9
-  };
-  var map = new kakao.maps.Map(container, options);
-  var markerPosition = new kakao.maps.LatLng(lat, lng); 
-  var marker = new kakao.maps.Marker({
-      position: markerPosition
-  });
+	var options = {
+	center : new kakao.maps.LatLng(35.13500079833994, 129.091494445223), 
+	level : 8
+	};
+	var map = new kakao.maps.Map(container, options);
+	var markerPosition = new kakao.maps.LatLng(35.13500079833994, 129.091494445223);
+	var marker = new kakao.maps.Marker({
+	position: markerPosition
+	});
   
   // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
   var mapTypeControl = new kakao.maps.MapTypeControl();
@@ -405,19 +401,5 @@
   // 지도에 선을 표시합니다 
   polyline.setMap(map);
 
-  $.ajax({
-    url: '/first_map_data/',
-    data: {},
-    success: function(res) {
-      for(var i = 0; i < res.length; i++) {
-        var marker = new kakao.maps.Marker({
-            map : map, // 마커를 표시할 지도
-            position : new kakao.maps.LatLng(res[i].lat, res[i].lng),
-            title : res[i].title,
-        });
-      } 
-    }
-  });
-});
 </script>
 {% endblock %}
