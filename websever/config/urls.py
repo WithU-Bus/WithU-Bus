@@ -15,11 +15,11 @@ urlpatterns = [
     path('이용안내/', views.이용안내),
     path('공지사항/', views.공지사항),
     path('bs420번/', views.bs420번),
-    path('불편사항/', views.불편사항),
     path('소개/', views.소개),
     path('', views.홈),
     path('홈/', views.홈),
     path('자유게시판/', views.자유게시판),
     path('Q&A/', views.문의),
+    path('contact/', views.contact),
 ]
 

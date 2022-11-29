@@ -71,12 +71,11 @@ def infra_map_data(request):
             
     return JsonResponse(map_list, safe=False)
 
+
 def 이용안내(request):
     return render(request, 'app/이용안내.html')  
 def 공지사항(request):
     return render(request, 'app/공지사항.html')
-def 불편사항(request):
-    return render(request, 'app/불편사항.html') 
 def 소개(request):
     return render(request, 'app/소개.html')
 def 자유게시판(request):
@@ -85,3 +84,29 @@ def 홈(request):
     return render(request, 'app/홈.html')
 def 문의(request):
     return render(request, 'app/Q&A.html')
+
+#Q&A
+def contact(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        comment = request.POST.get('comment')
+        # 발신자주소, 수신자주소, 메시지
+        send_mail('tlgus6566@gmail.com', email, name, comment)
+        return render(request, 'app/홈.html')
+    return render(request, 'app/contact.html')
+
+
+import smtplib #메일을 보내기 위한 SMTP 관련 모듈
+from email.mime.text import MIMEText
+
+def send_mail(from_email, to_email, name, msg):
+    smtp = smtplib.SMTP_SSL('smtp.gmail.com', 465) # 구글에서 제공하는 SMTP 서버 접속 설정
+    smtp.login(from_email, 'ozoskhjznxlipgae') # 인증정보 설정
+    #MIMEText('메시지',('메시지 형식'),('문자열 타입'))
+    name = name
+    msg = MIMEText(msg)
+    msg['Subject'] = '[불편사항]' + '[작성자]' + name + '[회신메일]' + to_email # 제목([불편사항]접수자 이메일주소)
+    msg['To'] = from_email # 수신 이메일(받는사람 이메일 주소)
+    smtp.sendmail(from_email, from_email, msg.as_string())
+    smtp.quit()
