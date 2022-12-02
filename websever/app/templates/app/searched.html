@@ -47,7 +47,7 @@
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
                     <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>부산광역시 해운대구 센텀동로 41 (센텀벤처타운, 5층 영도대교)</small>
                     <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+051-123-4567</small>
-                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>withU@naver.com</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>WithU.Bus@gmail.com</small>
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
                     <a href="/소개/" class="nav-item nav-link">WITH-U BUS 소개</a>
                     <a href="/이용안내/" class="nav-item nav-link">이용안내</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">노선/정류장 검색</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">노선/정류장 검색</a>
                         <div class="dropdown-menu m-0">
                             <a href="/bs420번/" class="dropdown-item">420번</a>
                             <a href="/bs1203번/" class="dropdown-item">1203번</a>
@@ -132,17 +132,17 @@
                         <div class="section-title position-relative pb-3 mb-5">
                             <h1> 검색하신 {{ searched }} 정보입니다. </h1>
                         </div>  
-                        <style>td{border : 1px solid black; width : 100px; height : 40px;}</style><table width='80%' border='2' cellspacing='0' cellpadding='0'>
+                        <style>th, td{border : 1px solid black; width : 100px; height : 40px;}</style><table width='100%' border='2' cellspacing='0' cellpadding='0'>
                             <tr>
-                                <td>버스번호</td>
-                                <td>버스정류장명</td>
-                                <td>운행방향</td>  
+                                <th><h4>버스번호</h4></th>
+                                <th><h4>버스정류장명</h4></th>
+                                <th><h4>운행방향</h4></th>  
                             </tr>
                             {% for i in bus %}
                             <tr>
-                                <td>{{i.BUS}}</td>
-                                <td><a href="/bus_station/{{i.NUMBER}}/">{{i.NAME}}</a></td>
-                                <td>{{i.WAY}}</td>
+                                <td><h6>{{i.BUS}}</h6></td>
+                                <td><h6><a href="/bus_station/{{i.NUMBER}}/">{{i.NAME}}</a></h6></td>
+                                <td><h6>{{i.WAY}}</h6></td>
                             </tr>
                             {% endfor %}
                         </table>
@@ -154,7 +154,7 @@
                 </div>
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{% static '/app/img/장애인2.jpg' %}" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{% static '/app/img/노선검색.png' %}" style="object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -247,11 +247,11 @@
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="bi bi-geo-alt text-primary me-2"></i>
-                                <p class="mb-0">부산광역시 해운대구 센텀동로 41 (센텀벤처타운, 5층 영도대교)</p>
+                                <p class="mb-0">부산광역시 해운대구 <br> 센텀동로 41 <br> (센텀벤처타운, 5층 영도대교)</p>
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="bi bi-envelope-open text-primary me-2"></i>
-                                <p class="mb-0">withU@naver.com</p>
+                                <p class="mb-0">WithU.Bus@gmail.com</p>
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="bi bi-telephone text-primary me-2"></i>
