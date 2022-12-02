@@ -1,36 +1,23 @@
 from django.db import models
 
-class Firstbus(models.Model):
+class Bus(models.Model):
+    BUS = models.IntegerField()
     NUMBER = models.AutoField(primary_key=True)
     NAME = models.CharField(max_length=20)
     UNIQUEID = models.IntegerField()
     lat = models.FloatField()
     lng = models.FloatField()
+    WAY = models.CharField(max_length=10)
 
     class Meta:
-        db_table = 'firstbus'
+        db_table = 'bus'
         app_label = 'app'
-        ordering = ['NUMBER', 'NAME', 'UNIQUEID', 'lat', 'lng']
+        ordering = ['BUS', 'NUMBER', 'NAME', 'UNIQUEID', 'lat', 'lng', 'WAY']
         managed = False
     
     def __str__(self):
-        return(self.NUMBER, self.NAME, self.UNIQUEID, self.lat, self.lng)
+        return(self.BUS, self.NUMBER, self.NAME, self.UNIQUEID, self.lat, self.lng, self.WAY)
 
-class Secondbus(models.Model):
-    NUMBER = models.AutoField(primary_key=True)
-    NAME = models.CharField(max_length=20)
-    UNIQUEID = models.IntegerField()
-    lat = models.FloatField()
-    lng = models.FloatField()
-
-    class Meta:
-        db_table = 'secondbus'
-        app_label = 'app'
-        ordering = ['NUMBER', 'NAME', 'UNIQUEID', 'lat', 'lng']
-        managed = False
-    
-    def __str__(self):
-        return(self.NUMBER, self.NAME, self.UNIQUEID, self.lat, self.lng)
 
 class Infra(models.Model):
     NUMBER = models.AutoField(primary_key=True)

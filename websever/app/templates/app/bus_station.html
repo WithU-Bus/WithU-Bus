@@ -39,21 +39,19 @@
     </div>
     <!-- Spinner End -->
 
-
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
-        <div class="row gx-0">
-            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
-                <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>부산광역시 해운대구 센텀동로 41 (센텀벤처타운, 5층 영도대교)</small>
-                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+051-123-4567</small>
-                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>WithU.Bus@gmail.com</small>
+        <!-- Topbar Start -->
+        <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+            <div class="row gx-0">
+                <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                    <div class="d-inline-flex align-items-center" style="height: 45px;">
+                        <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>부산광역시 해운대구 센텀동로 41 (센텀벤처타운, 5층 영도대교)</small>
+                        <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+051-123-4567</small>
+                        <small class="text-light"><i class="fa fa-envelope-open me-2"></i>WithU.Bus@gmail.com</small>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Topbar End -->
-
+        <!-- Topbar End -->
 
     <!-- Navbar & Carousel Start 상단 네비게이션바 설정-->
     <div class="container-fluid position-relative p-0">
@@ -68,12 +66,12 @@
                 <div class="navbar-nav ms-auto py-0">
                     <a href="/홈/" class="nav-item nav-link">홈</a>
                     <a href="/소개/" class="nav-item nav-link">WITH-U BUS 소개</a>
-                    <a href="/이용안내/" class="nav-item nav-link active">이용안내</a>
+                    <a href="/이용안내/" class="nav-item nav-link">이용안내</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">노선/정류장 검색</a>
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">노선/정류장 검색</a>
                         <div class="dropdown-menu m-0">
                             <a href="/bs420번/" class="dropdown-item">420번</a>
-                            <a href="/bs1203번/" class="dropdown-item">1203번</a>
+                            <a href="/bs1203번/" class="dropdown-item active">1203번</a>
                         </div>
                     </div> 
                     
@@ -93,14 +91,13 @@
         <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
             <div class="row py-5">
                 <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-4 text-white animated zoomIn">이용안내</h1>
-                    <a href="" class="h5 text-white">WITH-U BUS 이용요금 방법 안내</a>
+                    <h1 class="display-4 text-white animated zoomIn">1203번</h1>
+                    <a href="" class="h5 text-white">WITH-U BUS</a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Navbar End -->
-
+    <!-- Navbar & Carousel End -->
 
 
     <!-- Full Screen Search Start 검색기능 활성화-->
@@ -124,64 +121,31 @@
     </div>
     <!-- Full Screen Search End -->
 
-
-    <!-- Features Start -->
+    <!-- Quote Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 1000px;">
-                <h5 class="fw-bold text-primary text-uppercase">WITH-U BUS</h5>
-                <h1 class="mb-0">차세대는 장애인분들에게 이동편의를 제공하여</h1>
-                <h1 class="mb-0">장애인분들의 사회참여 확대를 위해 노력하고 있습니다.</h1>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-4">
-                    <div class="row g-5">
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.1s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                                <i class="fa fa-cubes text-white"></i>
-                            </div>
-                            <h4>이용대상</h4>
-                            <p class="mb-0">지체, 청각, 시각 등 이동에 불편을 겪는 장애인</p>
-                        </div>
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.1s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                                <i class="fa fa-award text-white"></i>
-                            </div>
-                            <h4>이용요금</h4>
-                            <p class="mb-0">성인 : 현금 1,300원 / 카드 1,200원</p>
-                            <p class="mb-0">청소년 : 현금 900원 / 카드 800원</p>
-                            <p class="mb-0">어린이 : 현금 400원 / 카드 350원</p>    
+            {% block content %}
+                <div class="container" style='margin-top:30px;'>
+                        <div class="panel-group">
+                        <div class="panel panel-default">
+                            <h1 class='title'>{{ station.NAME }}</h1>
+                            <div class="section-title position-relative pb-3 mb-5"></div>
+                            {% include "app/bus_station_map.html" %}
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4  wow zoomIn" data-wow-delay="0.1s" style="min-height: 350px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{% static '/app/img/이용안내.png' %}" style="object-fit: cover;">
+            {% endblock %}
+            <div class="explain">
+                <body>
+                    <h3 class="sub_title">주변인프라</h3>
+                    <div style="width:700px; height:350px; overflow:auto">
+                        <div id = "view_area"></div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="row g-5">
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.1s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                                <i class="fa fa-users-cog text-white"></i>
-                            </div>
-                            <h4>배차간격</h4>
-                            <p class="mb-0">- 평일 출퇴근 시간 : 15분 </br>(오전 08:00 ~ 오전 10:00 / 오후 5:00 ~ 오후 7:00) </br> - 평일 평시 / 주말 및 공휴일 : 30분 </p>
-                        </div>
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.1s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                                <i class="fa fa-phone-alt text-white"></i>
-                            </div>
-                            <h4>문의사항</h4>
-                            <p class="mb-0"> +051-123-4567</br>
-                                            withU@naver.com</p>
-                        </div>
-                    </div>
-                </div>
+                </body>
             </div>
         </div>
     </div>
-    <!-- Features Start -->
+    <!-- Quote End -->
 
 
      <!-- Vendor Start -->
