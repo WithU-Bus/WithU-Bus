@@ -109,15 +109,17 @@
                 <div class="modal-header border-0">
                     <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body d-flex align-items-center justify-content-center">
-                    <form class="d-flex" method="POST" action="{% url 'search' %}">
-                    {% csrf_token %}   
-                        <div class="input-group" style="width: 500px;"> 
+                    <div>
+                        <form class="d-flex" method="POST" action="{% url 'search' %}">
+                        {% csrf_token %} 
+                    </div>
+                    <div class="modal-body d-flex align-items-center justify-content-center">
+                        <div class="input-group" style="max-width:500px;"> 
                             <input type="search" class="form-control bg-transparent border-primary p-3" placeholder="정류소명을 입력해주세요." name="searched">
                             <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -161,7 +163,7 @@
                         <img class="img-fluid rounded" src="{% static '/app/img/다.jpg' %}" style="width: 60px; height: 60px;" >
                         <div class="ps-4">
                             <h4 class="text-primary mb-1">손미현</h4>
-                            <small class="text-uppercase">30대, 남</small>
+                            <small class="text-uppercase">30대, 여</small>
                         </div>
                     </div>
                     <div class="pt-4 pb-5 px-5">
@@ -173,7 +175,7 @@
                         <img class="img-fluid rounded" src="{% static '/app/img/라.jpg' %}" style="width: 60px; height: 60px;" >
                         <div class="ps-4">
                             <h4 class="text-primary mb-1">박시현</h4>
-                            <small class="text-uppercase">30대, 여</small>
+                            <small class="text-uppercase">50대, 남</small>
                         </div>
                     </div>
                     <div class="pt-4 pb-5 px-5">
@@ -197,7 +199,7 @@
                         <img class="img-fluid rounded" src="{% static '/app/img/바.jpg' %}" style="width: 60px; height: 60px;" >
                         <div class="ps-4">
                             <h4 class="text-primary mb-1">차두인</h4>
-                            <small class="text-uppercase">60대, 남</small>
+                            <small class="text-uppercase">30대, 남</small>
                         </div>
                     </div>
                     <div class="pt-4 pb-5 px-5">

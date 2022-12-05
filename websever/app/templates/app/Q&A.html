@@ -116,15 +116,17 @@
                 <div class="modal-header border-0">
                     <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body d-flex align-items-center justify-content-center">
-                    <form class="d-flex" method="POST" action="{% url 'search' %}">
-                    {% csrf_token %}   
-                        <div class="input-group" style="width: 500px;"> 
+                    <div>
+                        <form class="d-flex" method="POST" action="{% url 'search' %}">
+                        {% csrf_token %} 
+                    </div>
+                    <div class="modal-body d-flex align-items-center justify-content-center">
+                        <div class="input-group" style="max-width:500px;"> 
                             <input type="search" class="form-control bg-transparent border-primary p-3" placeholder="정류소명을 입력해주세요." name="searched">
                             <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -151,9 +153,9 @@
                         </div>
                     </div>
                     <p class="mb-4">WITH-U 버스는 장애인분들을 위해 개발된 버스입니다.</br>
-                                    이용과 관련된 질문이나 불편사항이 있으시다면 아래의 전화번호 +051-123-4567을 통해 문의하시거나,</br>
-                                    옆 이메일 문의창을 통해 남겨주신다면 24시간 이내에 답변드리겠습니다.</br>
-                                    WITH-U 버스는 여러분들의 이야기를 듣고, 개선해나가도록 노력하겠습니다. 감사합니다.</p>
+                        이용과 관련된 질문이나 불편사항이 있으시다면 아래의 전화번호 +051-123-4567을 통해 문의하시거나,</br>
+                        옆 이메일 문의창을 통해 남겨주신다면 24시간 이내에 답변드리겠습니다.</br>
+                        WITH-U 버스는 여러분들의 이야기를 듣고, 개선해나가도록 노력하겠습니다. 감사합니다.</p>
                     <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.1s">
                         <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
                             <i class="fa fa-phone-alt text-white"></i>
@@ -168,28 +170,35 @@
                     <div class = "bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.1s">
                         <form method="post" action="/contact/">
                             {% csrf_token %}
-                            <div class="form-group">
-                                <label for="name"></label>
-                                <input type="text" class="form-control" name="name" placeholder="이름을 입력하세요" style="width: 425px; height: 55px;">
+                            <div class="row g-3">
+                                <div class="col-xl-12">
+                                    <label for="name"></label>
+                                    <input type="text" class="form-control bg-light border-0" name="name" placeholder="이름을 입력하세요" style="height: 55px;">
+                                </div>
+                            
+                                <div class="col-12">
+                                    <label for="email"></label>
+                                    <input type="text" class="form-control bg-light border-0" name="email" placeholder="이메일 주소를 입력하세요" style="height: 55px;">
+                                    <br>
+                                </div>
+                                <div class="col-12">
+                                    <label for="comment"></label>
+                                    <textarea class="form-control bg-light border-0" rows="5" name="comment" placeholder="불편 사항을 입력하세요"></textarea>
+                                </div>
+                                <div>
+                                    <button type="submit" id="send" class="btn btn-dark w-100 py-3" onclick="return confirm('전송하시겠습니까?');">
+                                        전송하기
+                                    </button>
+                                </div>
+                                
                             </div>
-                            <div class="form-group">
-                                <label for="email"></label>
-                                <input type="text" class="form-control" name="email" placeholder="이메일 주소를 입력하세요" style="width: 425px; height: 55px;">
-                                <br>
-                            </div>
-                            <div class="form-group">
-                                <label for="comment"></label>
-                                <textarea class="form-control" rows="5" name="comment" placeholder="불편 사항을 입력하세요"></textarea>
-                            </div>
-                            <button type="submit" id="send" class="btn btn-dark w-100 py-3" onclick="return confirm('전송하시겠습니까?');">
-                                전송하기
-                            </button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Quote End -->
 
      <!-- Vendor Start -->
      <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">

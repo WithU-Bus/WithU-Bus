@@ -107,15 +107,17 @@
                 <div class="modal-header border-0">
                     <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body d-flex align-items-center justify-content-center">
-                    <form class="d-flex" method="POST" action="{% url 'search' %}">
-                    {% csrf_token %}   
-                        <div class="input-group" style="width: 500px;"> 
+                    <div>
+                        <form class="d-flex" method="POST" action="{% url 'search' %}">
+                        {% csrf_token %} 
+                    </div>
+                    <div class="modal-body d-flex align-items-center justify-content-center">
+                        <div class="input-group" style="max-width:500px;"> 
                             <input type="search" class="form-control bg-transparent border-primary p-3" placeholder="정류소명을 입력해주세요." name="searched">
                             <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -137,7 +139,9 @@
             {% endblock %}
             <div class="explain">
                 <body>
-                    <h3 class="sub_title">주변인프라</h3>
+                    <div style="width:700px; overflow:auto">
+                        <h3 class="sub_title">주변인프라</h3>
+                    </div>
                     <div style="width:700px; height:350px; overflow:auto">
                         <div id = "view_area"></div>
                     </div>

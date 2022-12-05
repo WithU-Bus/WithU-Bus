@@ -101,7 +101,6 @@
     </div>
     <!-- Navbar End -->
 
-
     <!-- Full Screen Search Start 검색기능 활성화-->
     <div class="modal fade" id="searchModal" tabindex="-1">
         <div class="modal-dialog modal-fullscreen">
@@ -109,15 +108,17 @@
                 <div class="modal-header border-0">
                     <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body d-flex align-items-center justify-content-center">
-                    <form class="d-flex" method="POST" action="{% url 'search' %}">
-                    {% csrf_token %}   
-                        <div class="input-group" style="width: 500px;"> 
+                    <div>
+                        <form class="d-flex" method="POST" action="{% url 'search' %}">
+                        {% csrf_token %} 
+                    </div>
+                    <div class="modal-body d-flex align-items-center justify-content-center">
+                        <div class="input-group" style="max-width:500px;"> 
                             <input type="search" class="form-control bg-transparent border-primary p-3" placeholder="정류소명을 입력해주세요." name="searched">
                             <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -172,7 +173,7 @@
                                 </div>
                                 <div class="p-4">
                                     <div class="d-flex mb-3">
-                                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>강나현</small>
+                                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>손미현</small>
                                         <small><i class="far fa-calendar-alt text-primary me-2"></i>18 Nov, 2022</small>
                                     </div>
                                     <h4 class="mb-3">부산시 장애인 전용 노선 개발 <br> 막바지 총력전</h4>
@@ -188,7 +189,7 @@
                                 </div>
                                 <div class="p-4">
                                     <div class="d-flex mb-3">
-                                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>강나현</small>
+                                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>손미현</small>
                                         <small><i class="far fa-calendar-alt text-primary me-2"></i>08 Nov, 2022</small>
                                     </div>
                                     <h4 class="mb-3">WITH-U BUS 노선 후보지는 <br> 과연?</h4>
@@ -204,7 +205,7 @@
                                 </div>
                                 <div class="p-4">
                                     <div class="d-flex mb-3">
-                                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>손미현</small>
+                                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>최윤아</small>
                                         <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Nov, 2022</small>
                                     </div>
                                     <h4 class="mb-3">부산시 장애인 전용 버스 명칭 'WITH-U BUS'로 확정</h4>
@@ -220,7 +221,7 @@
                                 </div>
                                 <div class="p-4">
                                     <div class="d-flex mb-3">
-                                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>손미현</small>
+                                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>최윤아</small>
                                         <small><i class="far fa-calendar-alt text-primary me-2"></i>26 Sep, 2022</small>
                                     </div>
                                     <h4 class="mb-3">장애인 이동 편의 증진을 위한 <br> 전용 버스 노선 개발 착수</h4>

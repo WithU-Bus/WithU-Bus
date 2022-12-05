@@ -101,8 +101,8 @@
                     <div class="p-3" style="max-width: 900px;">
                         <h2 class="text-white text-uppercase mb-3 animated slideInDown">WITH-U BUS</h2>
                         <h1 class="display-1 text-white mb-md-4 animated zoomIn">차별 없는 세상</br>우리가 대신해드릴게요</h1>
-                        <a href="/bs420번/" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="width: 395px; height: 90px;"><font size = 5><b>420번</b></font></br>(북구-사상구-사하구)</a>
-                        <a href="/bs1203번/" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight" style="width: 395px; height: 90px;"><font size = 5><b>1203번</b></font></br>(해운대-남구-부산진구-사상구)</a>
+                        <a href="/bs420번/" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="width: 395px; max-height: 80px;"><b>420번</b>(북구-사상구-사하구)</a>
+                        <a href="/bs1203번/" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight" style="width: 395px; max-height: 80px;"><b>1203번</b>(해운대-남구-부산진구-사상구)</a>
                     </div>
                 </div>
             </div>
@@ -113,8 +113,8 @@
                     <div class="p-3" style="max-width: 900px;">
                         <h2 class="text-white text-uppercase mb-3 animated slideInDown">WITH-U BUS</h2>
                         <h1 class="display-1 text-white mb-md-4 animated zoomIn">차별 없는 세상</br>우리가 대신해드릴게요</h1>
-                        <a href="/bs420번/" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="width: 395px; height: 90px;"><font size = 5><b>420번</b></font></br>(북구-사상구-사하구)</a>
-                        <a href="/bs1203번/" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight" style="width: 395px; height: 90px;"><font size = 5><b>1203번</b></font></br>(해운대-남구-부산진구-사상구)</a>
+                        <a href="/bs420번/" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="width: 395px; max-height: 80px;"><b>420번</b>(북구-사상구-사하구)</a>
+                        <a href="/bs1203번/" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight" style="width: 395px; max-height: 80px;"><b>1203번</b>(해운대-남구-부산진구-사상구)</a>
                     </div>
                 </div>
             </div>
@@ -141,15 +141,17 @@
                 <div class="modal-header border-0">
                     <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body d-flex align-items-center justify-content-center">
-                    <form class="d-flex" method="POST" action="{% url 'search' %}">
-                    {% csrf_token %}   
-                        <div class="input-group" style="width: 500px;"> 
+                    <div>
+                        <form class="d-flex" method="POST" action="{% url 'search' %}">
+                        {% csrf_token %} 
+                    </div>
+                    <div class="modal-body d-flex align-items-center justify-content-center">
+                        <div class="input-group" style="max-width:500px;"> 
                             <input type="search" class="form-control bg-transparent border-primary p-3" placeholder="정류소명을 입력해주세요." name="searched">
                             <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -289,7 +291,7 @@
                             </div>
                             <h4>문의사항</h4>
                             <p class="mb-0"> +051-123-4567</br>
-                                            withU@naver.com</p>
+                                WithU.Bus@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -336,22 +338,28 @@
                     <div class = "bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.1s">
                         <form method="post" action="/contact/">
                             {% csrf_token %}
-                            <div class="form-group">
-                                <label for="name"></label>
-                                <input type="text" class="form-control" name="name" placeholder="이름을 입력하세요" style="width: 425px; height: 55px;">
+                            <div class="row g-3">
+                                <div class="col-xl-12">
+                                    <label for="name"></label>
+                                    <input type="text" class="form-control bg-light border-0" name="name" placeholder="이름을 입력하세요" style="height: 55px;">
+                                </div>
+                            
+                                <div class="col-12">
+                                    <label for="email"></label>
+                                    <input type="text" class="form-control bg-light border-0" name="email" placeholder="이메일 주소를 입력하세요" style="height: 55px;">
+                                    <br>
+                                </div>
+                                <div class="col-12">
+                                    <label for="comment"></label>
+                                    <textarea class="form-control bg-light border-0" rows="5" name="comment" placeholder="불편 사항을 입력하세요"></textarea>
+                                </div>
+                                <div>
+                                    <button type="submit" id="send" class="btn btn-dark w-100 py-3" onclick="return confirm('전송하시겠습니까?');">
+                                        전송하기
+                                    </button>
+                                </div>
+                                
                             </div>
-                            <div class="form-group">
-                                <label for="email"></label>
-                                <input type="text" class="form-control" name="email" placeholder="이메일 주소를 입력하세요" style="width: 425px; height: 55px;">
-                                <br>
-                            </div>
-                            <div class="form-group">
-                                <label for="comment"></label>
-                                <textarea class="form-control" rows="5" name="comment" placeholder="불편 사항을 입력하세요"></textarea>
-                            </div>
-                            <button type="submit" id="send" class="btn btn-dark w-100 py-3" onclick="return confirm('전송하시겠습니까?');">
-                                전송하기
-                            </button>
                         </form>
                     </div>
                 </div>

@@ -107,41 +107,34 @@
                 <div class="modal-header border-0">
                     <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body d-flex align-items-center justify-content-center">
-                    <form class="d-flex" method="POST" action="{% url 'search' %}">
-                    {% csrf_token %}   
-                        <div class="input-group" style="width: 500px;"> 
+                    <div>
+                        <form class="d-flex" method="POST" action="{% url 'search' %}">
+                        {% csrf_token %} 
+                    </div>
+                    <div class="modal-body d-flex align-items-center justify-content-center">
+                        <div class="input-group" style="max-width:500px;"> 
                             <input type="search" class="form-control bg-transparent border-primary p-3" placeholder="정류소명을 입력해주세요." name="searched">
                             <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
     <!-- Full Screen Search End -->
 
-    <!-- Quote Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
+            <div class="section-title position-relative pb-3 mb-5"><h1 class="mb-0">WITH-U 1203번</h1></div>
             <div class="row g-5">
+                <h4 class="mb-0">해운대구청 - 남구청후문 - 부암역 - 모라주공아파트 - 서면역.서면지하상가 - 대연역.부산은행 - 중동역</h4>
                 <div class="col-lg-7">
-                    <h1 class="mb-0">WITH-U 420번</h1>
-                    <div class="section-title position-relative pb-3 mb-5"></div>
-                    <h4 class="mb-0">북구 - 사상구 - 사하구 - 북구 - 사상구 - 사하구</h4> <br>
                     {% include "app/420번_map.html" %}
                 </div>
                 <div class="col-lg-5">
                         <form>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
                             <div class="row g-3">
-                                <div style="width:400px; height:500px; overflow:auto">
+                                <div style="width:100%; height:500px; overflow:auto">
                                     <style> td{border : 1px solid black; width : 400px; height : 35px;}</style>
                                     <table width="100%" border="1" cellspacing="0" cellpadding="0">
                                         <th> <br> <h4>정류소명</h4> </th>
@@ -158,6 +151,8 @@
                         </form>
                     </div>
                 </div>
+                </div>
+                
             </div>
         </div>
     </div>
