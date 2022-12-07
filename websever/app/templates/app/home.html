@@ -42,13 +42,13 @@
             audio_1.pause()
             audio_2.pause()
             
-            audio_3.load()
+            //audio_3.load()
             audio_3.play()
             
         }else if (position > 500) { // 오디오3 위치
             audio_1.pause()
             
-            audio_2.load()
+            //audio_2.load()
             audio_2.play()
             
             audio_3.pause()
@@ -83,7 +83,7 @@
             </div>
             <div class="col-lg-4 text-center text-lg-end">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <audio  id="audio_1" autoplay controls style="height:20px;">
+                    <audio  id="audio_1" controls style="height:20px;">
                         <source src="{% static '/app/music/home.wav' %}" type="audio/wav">
                     </audio>
                 </div>
@@ -272,7 +272,7 @@
                     <div class="position-relative h-100">
                         <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{% static '/app/img/장애인2.jpg' %}" style="object-fit: cover;">
                     </div>
-                    <audio id="audio_2" autoplay controls>
+                    <audio id="audio_2" controls>
                         <source src="{% static '/app/music/info.wav' %}" type="audio/wav">
                     </audio>
                 </div>
@@ -314,7 +314,7 @@
                     <div class="position-relative h-100">
                         <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{% static '/app/img/이용안내.png' %}" style="object-fit: cover;">
                     </div>
-                    <audio id="audio_3" autoplay controls>
+                    <audio id="audio_3" controls>
                         <source src="{% static '/app/music/userinfo.wav' %}" type="audio/wav">
                     </audio>
                 </div>
