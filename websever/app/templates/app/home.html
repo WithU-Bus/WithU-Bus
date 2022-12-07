@@ -11,7 +11,7 @@
 
 
     <!-- Favicon -->
-    <link href="img/BUS.png" rel="icon">
+    <link href="{%static '/app/img/BUS.png' %}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,6 +33,36 @@
     <link href="{% static '/app/css/style.css' %}" rel="stylesheet">
 </head>
 
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $(window).scroll(function () {
+        var position = $(window).scrollTop();
+        
+        if (position > 1000) { // 오디오2 위치
+            audio_1.pause()
+            audio_2.pause()
+            
+            audio_3.load()
+            audio_3.play()
+            
+        }else if (position > 500) { // 오디오3 위치
+            audio_1.pause()
+            
+            audio_2.load()
+            audio_2.play()
+            
+            audio_3.pause()
+            
+        }else { // 오디오1 위치
+            audio_1.load()
+            audio_1.play()
+            
+            audio_2.pause()
+            audio_3.pause()
+        }
+    });
+</script>
+
 <body>
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -47,19 +77,25 @@
             <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
                     <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>부산광역시 해운대구 센텀동로 41 (센텀벤처타운, 5층 영도대교)</small>
-                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+051-123-4567</small>
-                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>WithU.Bus@gmail.com</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+051-303-1015</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>WithU.Bus@gmail.com</small> 
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <audio  id="audio_1" autoplay controls style="height:20px;">
+                        <source src="{% static '/app/music/home.wav' %}" type="audio/wav">
+                    </audio>
                 </div>
             </div>
         </div>
     </div>
     <!-- Topbar End -->
 
-
     <!-- Navbar & Carousel Start 상단 네비게이션바 설정-->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-            <a href="/홈/" class="navbar-brand p-0">
+            <a href="/" class="navbar-brand p-0">
                 <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>WITH-U BUS</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -67,23 +103,23 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="/홈/" class="nav-item nav-link active">홈</a>
-                    <a href="/소개/" class="nav-item nav-link">WITH-U BUS 소개</a>
-                    <a href="/이용안내/" class="nav-item nav-link">이용안내</a>
+                    <a href="/" class="nav-item nav-link active">홈</a>
+                    <a href="/info/" class="nav-item nav-link">WITH-U BUS 소개</a>
+                    <a href="/userinfo/" class="nav-item nav-link">이용안내</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">노선/정류장 검색</a>
                         <div class="dropdown-menu m-0">
-                            <a href="/bs420번/" class="dropdown-item">420번</a>
-                            <a href="/bs1203번/" class="dropdown-item">1203번</a>
+                            <a href="/bs420/" class="dropdown-item">420번</a>
+                            <a href="/bs1203/" class="dropdown-item">1203번</a>
                         </div>
                     </div> 
                     
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">고객소리</a>
                         <div class="dropdown-menu m-0">
-                            <a href="/공지사항/" class="dropdown-item">공지사항</a>
+                            <a href="/notice/" class="dropdown-item">공지사항</a>
                             <a href="/Q&A/" class="dropdown-item">Q&A</a>
-                            <a href="/한줄후기/" class="dropdown-item">한줄후기</a>
+                            <a href="/review/" class="dropdown-item">한줄후기</a>
                         </div>
                     </div>
                 </div>
@@ -101,8 +137,8 @@
                     <div class="p-3" style="max-width: 900px;">
                         <h2 class="text-white text-uppercase mb-3 animated slideInDown">WITH-U BUS</h2>
                         <h1 class="display-1 text-white mb-md-4 animated zoomIn">차별 없는 세상</br>우리가 대신해드릴게요</h1>
-                        <a href="/bs420번/" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="width: 395px; max-height: 80px;"><b>420번</b>(북구-사상구-사하구)</a>
-                        <a href="/bs1203번/" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight" style="width: 395px; max-height: 80px;"><b>1203번</b>(해운대-남구-부산진구-사상구)</a>
+                        <a href="/bs420/" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="width: 395px; max-height: 80px;"><b>420번</b>(북구-사상구-사하구)</a>
+                        <a href="/bs1203/" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight" style="width: 395px; max-height: 80px;"><b>1203번</b>(해운대-남구-부산진구-사상구)</a>
                     </div>
                 </div>
             </div>
@@ -113,8 +149,8 @@
                     <div class="p-3" style="max-width: 900px;">
                         <h2 class="text-white text-uppercase mb-3 animated slideInDown">WITH-U BUS</h2>
                         <h1 class="display-1 text-white mb-md-4 animated zoomIn">차별 없는 세상</br>우리가 대신해드릴게요</h1>
-                        <a href="/bs420번/" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="width: 395px; max-height: 80px;"><b>420번</b>(북구-사상구-사하구)</a>
-                        <a href="/bs1203번/" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight" style="width: 395px; max-height: 80px;"><b>1203번</b>(해운대-남구-부산진구-사상구)</a>
+                        <a href="/bs420/" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="width: 395px; max-height: 80px;"><b>420번</b>(북구-사상구-사하구)</a>
+                        <a href="/bs1203/" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight" style="width: 395px; max-height: 80px;"><b>1203번</b>(해운대-남구-부산진구-사상구)</a>
                     </div>
                 </div>
             </div>
@@ -210,9 +246,9 @@
                         <h5 class="fw-bold text-primary text-uppercase">WITH-U BUS</h5>
                         <h1 class="mb-0">장애인 이동권, 차세대가 해결해드립니다.</h1>
                     </div>
-                    <p class="mb-2">오로지 장애인을 위한 버스인 WITH-U BUS가 2022년 12월 17일로 출시되었습니다.
-                                    우리 차세대는 최신 트렌드인 빅데이터분석으로 장애인분들의 일자리, 거주시설, 편의시설 등을 고려하여 최신식 버스 노선을 개발하였습니다.
-                                    대중교통 이용에 어려움을 겪고 있는 장애인분들을 위해 항상 여러분편에 서서 편히 다닐 수 있는 버스를 제공하도록 노력하겠습니다.<br>
+                    <p class="mb-2">오로지 장애인을 위한 버스인 WITH-U BUS가 2022년 12월 17일로 출시되었습니다.<br>
+                                    우리 차세대는 최신 트렌드인 빅데이터분석으로 장애인분들의 일자리, 거주시설, 편의시설 등을 고려하여<br> 최신식 버스 노선을 개발하였습니다.
+                                    대중교통 이용에 어려움을 겪고 있는 장애인분들을 위해 항상 <br>여러분편에 서서 편히 다닐 수 있는 버스를 제공하도록 노력하겠습니다.<br>
                     <br>                
                     <div class="row g-0 mb-3">
                         <div class="col-sm-8 wow zoomIn" data-wow-delay="0.1s">
@@ -228,7 +264,7 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="mb-2">문의사항</h5>
-                            <h4 class="text-primary mb-0">+051-123-4567</h4>
+                            <h4 class="text-primary mb-0">+051-303-1015</h4>
                         </div>
                     </div>
                 </div>
@@ -236,6 +272,9 @@
                     <div class="position-relative h-100">
                         <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{% static '/app/img/장애인2.jpg' %}" style="object-fit: cover;">
                     </div>
+                    <audio id="audio_2" autoplay controls>
+                        <source src="{% static '/app/music/info.wav' %}" type="audio/wav">
+                    </audio>
                 </div>
             </div>
         </div>
@@ -248,7 +287,7 @@
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 1000px;">
                 <h5 class="fw-bold text-primary text-uppercase">WITH-U BUS</h5>
                 <h1 class="mb-0">차세대는 장애인분들에게 이동편의를 제공하여</h1>
-                <h1 class="mb-0">장애인분들의 사회참여 확대를 위해 노력하고 있습니다.</h1>
+                <h1 class="mb-0">사회참여 확대를 위해 노력하고 있습니다.</h1>
             </div>
             <div class="row g-5">
                 <div class="col-lg-4">
@@ -265,9 +304,9 @@
                                 <i class="fa fa-award text-white"></i>
                             </div>
                             <h4>이용요금</h4>
-                            <p class="mb-0">성인 : 현금 1,300원 / 카드 1,200원</p>
-                            <p class="mb-0">청소년 : 현금 900원 / 카드 800원</p>
-                            <p class="mb-0">어린이 : 현금 400원 / 카드 350원</p>    
+                            <p class="mb-0">• 성인 : 현금 1,300원 / 카드 1,200원</p>
+                            <p class="mb-0">• 청소년 : 현금 900원 / 카드 800원</p>
+                            <p class="mb-0">• 어린이 : 현금 400원 / 카드 350원</p>    
                         </div>
                     </div>
                 </div>
@@ -275,6 +314,9 @@
                     <div class="position-relative h-100">
                         <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{% static '/app/img/이용안내.png' %}" style="object-fit: cover;">
                     </div>
+                    <audio id="audio_3" autoplay controls>
+                        <source src="{% static '/app/music/userinfo.wav' %}" type="audio/wav">
+                    </audio>
                 </div>
                 <div class="col-lg-4">
                     <div class="row g-5">
@@ -283,14 +325,14 @@
                                 <i class="fa fa-users-cog text-white"></i>
                             </div>
                             <h4>배차간격</h4>
-                            <p class="mb-0">- 평일 출퇴근 시간 : 15분 </br>(오전 08:00 ~ 오전 10:00 / 오후 5:00 ~ 오후 7:00) </br> - 평일 평시 / 주말 및 공휴일 : 30분 </p>
+                            <p class="mb-0">• 평일 출퇴근 시간 : 15분 </br> &nbsp; (오전 08:00 ~ 오전 10:00 / 오후 5:00 ~ 오후 7:00) </br> • 평일 평시 / 주말 및 공휴일 : 30분 </p>
                         </div>
                         <div class="col-12 wow zoomIn" data-wow-delay="0.1s">
                             <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
                                 <i class="fa fa-phone-alt text-white"></i>
                             </div>
                             <h4>문의사항</h4>
-                            <p class="mb-0"> +051-123-4567</br>
+                            <p class="mb-0"> +051-303-1015</br>
                                 WithU.Bus@gmail.com</p>
                         </div>
                     </div>
@@ -307,8 +349,7 @@
                 <div class="col-lg-7">
                     <div class="section-title position-relative pb-3 mb-5">
                         <h5 class="fw-bold text-primary text-uppercase">Q&A</h5>
-                        <h1 class="mb-0">WITH-U 버스와 관련된 질문/불편사항 등이 있으시다면,
-                                        언제든지 얘기해주세요!
+                        <h1 class="mb-0">질문/불편사항 등이 있으시다면, <br>언제든지 얘기해주세요!
                         </h1>
 
                     </div>
@@ -321,16 +362,16 @@
                         </div>
                     </div>
                     <p class="mb-4">WITH-U 버스는 장애인분들을 위해 개발된 버스입니다.</br>
-                        이용과 관련된 질문이나 불편사항이 있으시다면 아래의 전화번호 +051-123-4567을 통해 문의하시거나,</br>
+                        이용과 관련된 질문이나 불편사항이 있으시다면 아래의 전화번호 +051-303-1015을 통해 문의하시거나,</br>
                         옆 이메일 문의창을 통해 남겨주신다면 24시간 이내에 답변드리겠습니다.</br>
-                        WITH-U 버스는 여러분들의 이야기를 듣고, 개선해나가도록 노력하겠습니다. 감사합니다.</p>
+                        저희는 여러분들의 이야기를 듣고, 개선해나가도록 노력하겠습니다. 감사합니다.</p>
                     <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.1s">
                         <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
                             <i class="fa fa-phone-alt text-white"></i>
                         </div>
                         <div class="ps-4">
                             <h5 class="mb-2">문의사항</h5>
-                            <h4 class="text-primary mb-0">+051-123-4567</h4>
+                            <h4 class="text-primary mb-0">+051-303-1015</h4>
                         </div>
                     </div>
                 </div>
@@ -351,7 +392,7 @@
                                 </div>
                                 <div class="col-12">
                                     <label for="comment"></label>
-                                    <textarea class="form-control bg-light border-0" rows="5" name="comment" placeholder="불편 사항을 입력하세요"></textarea>
+                                    <textarea class="form-control bg-light border-0" rows="5" name="comment" placeholder="질문/불편 사항을 입력하세요"></textarea>
                                 </div>
                                 <div>
                                     <button type="submit" id="send" class="btn btn-dark w-100 py-3" onclick="return confirm('전송하시겠습니까?');">
@@ -460,7 +501,7 @@
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="bi bi-telephone text-primary me-2"></i>
-                                <p class="mb-0">+051-123-4567</p>
+                                <p class="mb-0">+051-303-1015</p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
@@ -468,9 +509,9 @@
                                 <h3 class="text-light mb-0">바로가기</h3>
                             </div>
                             <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="/홈/"><i class="bi bi-arrow-right text-primary me-2"></i>홈</a>
-                                <a class="text-light mb-2" href="/소개/"><i class="bi bi-arrow-right text-primary me-2"></i>WITH-U BUS 소개</a>
-                                <a class="text-light mb-2" href="/이용안내/"><i class="bi bi-arrow-right text-primary me-2"></i>이용안내</a>
+                                <a class="text-light mb-2" href="/"><i class="bi bi-arrow-right text-primary me-2"></i>홈</a>
+                                <a class="text-light mb-2" href="/info/"><i class="bi bi-arrow-right text-primary me-2"></i>WITH-U BUS 소개</a>
+                                <a class="text-light mb-2" href="/userinfo/"><i class="bi bi-arrow-right text-primary me-2"></i>이용안내</a>
                                 <a class="text-light mb-2" href="/Q&A/"><i class="bi bi-arrow-right text-primary me-2"></i>Q&A</a>
                             </div>
                         </div>
@@ -479,10 +520,10 @@
                                 <h3 class="text-light mb-0">즐겨찾기</h3>
                             </div>
                             <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="/bs420번/"><i class="bi bi-arrow-right text-primary me-2"></i>420번</a>
-                                <a class="text-light mb-2" href="/bs1203번/"><i class="bi bi-arrow-right text-primary me-2"></i>1203번</a>
-                                <a class="text-light mb-2" href="/공지사항/"><i class="bi bi-arrow-right text-primary me-2"></i>공지사항</a>
-                                <a class="text-light mb-2" href="/한줄후기/"><i class="bi bi-arrow-right text-primary me-2"></i>한줄후기</a>
+                                <a class="text-light mb-2" href="/bs420/"><i class="bi bi-arrow-right text-primary me-2"></i>420번</a>
+                                <a class="text-light mb-2" href="/bs1203/"><i class="bi bi-arrow-right text-primary me-2"></i>1203번</a>
+                                <a class="text-light mb-2" href="/notice/"><i class="bi bi-arrow-right text-primary me-2"></i>공지사항</a>
+                                <a class="text-light mb-2" href="/review/"><i class="bi bi-arrow-right text-primary me-2"></i>한줄후기</a>
                             </div>
                         </div>
                     </div>
@@ -495,7 +536,7 @@
             <div class="row justify-content-end">
                 <div class="col-lg-8 col-md-6">
                     <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="/홈/">WITH-U BUS</a>. All Rights Reserved. 
+                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="/">WITH-U BUS</a>. All Rights Reserved. 
                   
                   <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                   Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">HTML Codex</a></p>

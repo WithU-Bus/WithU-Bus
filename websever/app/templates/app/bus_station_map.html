@@ -4,9 +4,6 @@
     <div class="container text-center">
         <div id="map" style="width:100%; height:400px; margin:0 auto; float:left; margin-right:10px;"></div>
     </div>
-    <div style="width:500px;">
-        <div style="width:500px; height:50px; margin:0 auto; float:left; margin-right:10px;">&nbsp;</div>
-    </div>
 </div>
 <script src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=230cf9e42aefd727dd89280fc354074b"></script>
 <script>
@@ -45,7 +42,7 @@
     });
     marker.setMap(map);
 
-    var str_html = "<style>td{border : 1px solid black; width : 700px; height : 40px;}</style><table width='100%' border='2' cellspacing='0' cellpadding='0'><tr><td>구분</td><td>기관명</td><td>도로명주소</td><td>전화번호</td></tr>";
+    var str_html = "<style>td{border : 1px solid black; width : 100%; height : 40px;}</style><table width='100%' border='2' cellspacing='0' cellpadding='0'><tr><td>구분</td><td>기관명</td><td>도로명주소</td><td>전화번호</td></tr>";
 
     $.ajax({
         url: '/infra_map_data/',

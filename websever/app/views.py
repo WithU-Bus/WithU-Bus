@@ -3,15 +3,15 @@ from django.shortcuts import render
 from app.models import Bus
 from app.models import Infra
 
-def bs1203번(request):
+def bs1203(request):
     firstbus = Bus.objects.filter(BUS='1203')
-    return render(request, 'app/1203번.html', {
+    return render(request, 'app/1203.html', {
         'my_data' : firstbus,
     })
 
-def bs420번(request):
+def bs420(request):
     secondbus = Bus.objects.filter(BUS='420')
-    return render(request, 'app/420번.html', {
+    return render(request, 'app/420.html', {
         'my_data' : secondbus,
     })
 
@@ -62,17 +62,17 @@ def infra_map_data(request):
     return JsonResponse(map_list, safe=False)
 
 
-def 이용안내(request):
-    return render(request, 'app/이용안내.html')  
-def 공지사항(request):
-    return render(request, 'app/공지사항.html')
-def 소개(request):
-    return render(request, 'app/소개.html')
-def 한줄후기(request):
-    return render(request, 'app/한줄후기.html')
-def 홈(request):
-    return render(request, 'app/홈.html')
-def 문의(request):
+def userinfo(request):
+    return render(request, 'app/userinfo.html')  
+def notice(request):
+    return render(request, 'app/notice.html')
+def info(request):
+    return render(request, 'app/info.html')
+def review(request):
+    return render(request, 'app/review.html')
+def home(request):
+    return render(request, 'app/home.html')
+def QandA(request):
     return render(request, 'app/Q&A.html')
 
 #Q&A

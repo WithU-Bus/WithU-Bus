@@ -45,7 +45,7 @@
                 <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center" style="height: 45px;">
                         <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>부산광역시 해운대구 센텀동로 41 (센텀벤처타운, 5층 영도대교)</small>
-                        <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+051-123-4567</small>
+                        <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+051-303-1015</small>
                         <small class="text-light"><i class="fa fa-envelope-open me-2"></i>WithU.Bus@gmail.com</small>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
     <!-- Navbar & Carousel Start 상단 네비게이션바 설정-->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-            <a href="/홈/" class="navbar-brand p-0">
+            <a href="/" class="navbar-brand p-0">
                 <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>WITH-U BUS</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -73,23 +73,23 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="/홈/" class="nav-item nav-link">홈</a>
-                    <a href="/소개/" class="nav-item nav-link">WITH-U BUS 소개</a>
-                    <a href="/이용안내/" class="nav-item nav-link">이용안내</a>
+                    <a href="/" class="nav-item nav-link">홈</a>
+                    <a href="/info/" class="nav-item nav-link">WITH-U BUS 소개</a>
+                    <a href="/userinfo/" class="nav-item nav-link">이용안내</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">노선/정류장 검색</a>
                         <div class="dropdown-menu m-0">
-                            <a href="/bs420번/" class="dropdown-item">420번</a>
-                            <a href="/bs1203번/" class="dropdown-item">1203번</a>
+                            <a href="/bs420/" class="dropdown-item">420번</a>
+                            <a href="/bs1203/" class="dropdown-item">1203번</a>
                         </div>
                     </div> 
                     
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">고객소리</a>
                         <div class="dropdown-menu m-0">
-                            <a href="/공지사항/" class="dropdown-item">공지사항</a>
+                            <a href="/notice/" class="dropdown-item">공지사항</a>
                             <a href="/Q&A/" class="dropdown-item active" >Q&A</a>
-                            <a href="/한줄후기/" class="dropdown-item">한줄후기</a>
+                            <a href="/review/" class="dropdown-item">한줄후기</a>
                         </div>
                     </div>
                 </div>
@@ -139,8 +139,7 @@
                 <div class="col-lg-7">
                     <div class="section-title position-relative pb-3 mb-5">
                         <h5 class="fw-bold text-primary text-uppercase">Q&A</h5>
-                        <h1 class="mb-0">WITH-U 버스와 관련된 질문/불편사항 등이 있으시다면,
-                                        언제든지 얘기해주세요!
+                        <h1 class="mb-0">질문/불편사항 등이 있으시다면, <br> 언제든지 얘기해주세요!
                         </h1>
 
                     </div>
@@ -153,16 +152,16 @@
                         </div>
                     </div>
                     <p class="mb-4">WITH-U 버스는 장애인분들을 위해 개발된 버스입니다.</br>
-                        이용과 관련된 질문이나 불편사항이 있으시다면 아래의 전화번호 +051-123-4567을 통해 문의하시거나,</br>
+                        이용과 관련된 질문이나 불편사항이 있으시다면 아래의 전화번호 +051-303-1015을 통해 문의하시거나,</br>
                         옆 이메일 문의창을 통해 남겨주신다면 24시간 이내에 답변드리겠습니다.</br>
-                        WITH-U 버스는 여러분들의 이야기를 듣고, 개선해나가도록 노력하겠습니다. 감사합니다.</p>
+                        저희는 여러분들의 이야기를 듣고, 개선해나가도록 노력하겠습니다. 감사합니다.</p>
                     <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.1s">
                         <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
                             <i class="fa fa-phone-alt text-white"></i>
                         </div>
                         <div class="ps-4">
                             <h5 class="mb-2">문의사항</h5>
-                            <h4 class="text-primary mb-0">+051-123-4567</h4>
+                            <h4 class="text-primary mb-0">+051-303-1015</h4>
                         </div>
                     </div>
                 </div>
@@ -183,7 +182,7 @@
                                 </div>
                                 <div class="col-12">
                                     <label for="comment"></label>
-                                    <textarea class="form-control bg-light border-0" rows="5" name="comment" placeholder="불편 사항을 입력하세요"></textarea>
+                                    <textarea class="form-control bg-light border-0" rows="5" name="comment" placeholder="질문/불편 사항을 입력하세요"></textarea>
                                 </div>
                                 <div>
                                     <button type="submit" id="send" class="btn btn-dark w-100 py-3" onclick="return confirm('전송하시겠습니까?');">
@@ -292,7 +291,7 @@
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="bi bi-telephone text-primary me-2"></i>
-                                <p class="mb-0">+051-123-4567</p>
+                                <p class="mb-0">+051-303-1015</p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
@@ -300,9 +299,9 @@
                                 <h3 class="text-light mb-0">바로가기</h3>
                             </div>
                             <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="/홈/"><i class="bi bi-arrow-right text-primary me-2"></i>홈</a>
-                                <a class="text-light mb-2" href="/소개/"><i class="bi bi-arrow-right text-primary me-2"></i>WITH-U BUS 소개</a>
-                                <a class="text-light mb-2" href="/이용안내/"><i class="bi bi-arrow-right text-primary me-2"></i>이용안내</a>
+                                <a class="text-light mb-2" href="/"><i class="bi bi-arrow-right text-primary me-2"></i>홈</a>
+                                <a class="text-light mb-2" href="/info/"><i class="bi bi-arrow-right text-primary me-2"></i>WITH-U BUS 소개</a>
+                                <a class="text-light mb-2" href="/userinfo/"><i class="bi bi-arrow-right text-primary me-2"></i>이용안내</a>
                                 <a class="text-light mb-2" href="/Q&A/"><i class="bi bi-arrow-right text-primary me-2"></i>Q&A</a>
                             </div>
                         </div>
@@ -311,10 +310,10 @@
                                 <h3 class="text-light mb-0">즐겨찾기</h3>
                             </div>
                             <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="/bs420번/"><i class="bi bi-arrow-right text-primary me-2"></i>420번</a>
-                                <a class="text-light mb-2" href="/bs1203번/"><i class="bi bi-arrow-right text-primary me-2"></i>1203번</a>
-                                <a class="text-light mb-2" href="/공지사항/"><i class="bi bi-arrow-right text-primary me-2"></i>공지사항</a>
-                                <a class="text-light mb-2" href="/한줄후기/"><i class="bi bi-arrow-right text-primary me-2"></i>한줄후기</a>
+                                <a class="text-light mb-2" href="/bs420/"><i class="bi bi-arrow-right text-primary me-2"></i>420번</a>
+                                <a class="text-light mb-2" href="/bs1203/"><i class="bi bi-arrow-right text-primary me-2"></i>1203번</a>
+                                <a class="text-light mb-2" href="/notice/"><i class="bi bi-arrow-right text-primary me-2"></i>공지사항</a>
+                                <a class="text-light mb-2" href="/review/"><i class="bi bi-arrow-right text-primary me-2"></i>한줄후기</a>
                             </div>
                         </div>
                     </div>
@@ -327,7 +326,7 @@
             <div class="row justify-content-end">
                 <div class="col-lg-8 col-md-6">
                     <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="/홈/">WITH-U BUS</a>. All Rights Reserved. 
+                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="/">WITH-U BUS</a>. All Rights Reserved. 
                   
                   <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                   Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">HTML Codex</a></p>
