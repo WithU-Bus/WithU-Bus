@@ -40,25 +40,31 @@
         
         if (position > 1000) { // 오디오2 위치
             audio_1.pause()
+            audio_1.currentTime = 0
             audio_2.pause()
+            audio_2.currentTime = 0
             
             //audio_3.load()
             audio_3.play()
             
         }else if (position > 500) { // 오디오3 위치
             audio_1.pause()
+            audio_1.currentTime = 0
             
             //audio_2.load()
             audio_2.play()
             
             audio_3.pause()
+            audio_3.currentTime = 0
             
         }else { // 오디오1 위치
-            audio_1.load()
+            //audio_1.load()
             audio_1.play()
             
             audio_2.pause()
+            audio_2.currentTime = 0
             audio_3.pause()
+            audio_3.currentTime = 0
         }
     });
 </script>
