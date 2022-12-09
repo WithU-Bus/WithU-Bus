@@ -9,11 +9,27 @@ def bs1203(request):
         'my_data' : firstbus,
     })
 
+def bs1203_map(request):
+    data = Bus.objects.filter(BUS='1203')
+    map_list = []
+    for d in data:
+        d = model_to_dict(d)
+        map_list.append(d)
+    return JsonResponse(map_list, safe=False)
+
 def bs420(request):
     secondbus = Bus.objects.filter(BUS='420')
     return render(request, 'app/420.html', {
         'my_data' : secondbus,
     })
+
+def bs420_map(request):
+    data = Bus.objects.filter(BUS='420')
+    map_list = []
+    for d in data:
+        d = model_to_dict(d)
+        map_list.append(d)
+    return JsonResponse(map_list, safe=False)
 
 def bus_station(request, NUMBER):
     station = Bus.objects.get(NUMBER=NUMBER)
