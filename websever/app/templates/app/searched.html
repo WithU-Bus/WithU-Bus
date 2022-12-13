@@ -134,11 +134,11 @@
                         <div class="section-title position-relative pb-3 mb-5">
                             <h1> 검색하신 {{ searched }} 정보입니다. </h1>
                         </div>  
-                        <style>th, td{border : 1px solid black; width : 100px; height : 40px;}</style><table width='100%' border='2' cellspacing='0' cellpadding='0'>
-                            <tr>
-                                <th><h5>버스번호</h5></th>
-                                <th><h5>버스정류장명</h5></th>
-                                <th><h5>운행방향</h5></th>  
+                        <style>th, td{border : 1px solid black; width : 100px; height : 40px; padding: 8px; text-align: center;} th{font-size : 20px;}</style><table width='100%' border='2' cellspacing='0' cellpadding='0'>
+                            <tr bgcolor='#EEF9FF'>
+                                <th>버스번호</th>
+                                <th>버스정류장명</th>
+                                <th>운행방향</th>  
                             </tr>
                             {% for i in bus %}
                             <tr>
