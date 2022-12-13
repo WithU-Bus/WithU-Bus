@@ -130,7 +130,13 @@
             <div class="row g-5">
                 <h4 class="mb-0">해운대구청 - 남구청후문 - 부암역 - 모라주공아파트 - 서면역.서면지하상가 - 대연역.부산은행 - 중동역</h4>
                 <div class="col-lg-7">
-                    {% include "app/1203_map.html" %}
+                    <div class="row g-3">
+                        {% include "app/1203_map.html" %}
+                    </div>
+                    <p>
+                        <button onclick="hideMarkers()">마커 감추기</button>
+                        <button onclick="showMarkers()">마커 보이기</button>
+                    </p>
                 </div>
                 <div class="col-lg-5">
                         <form>
@@ -138,7 +144,7 @@
                                 <div style="width:100%; height:470px; overflow:auto">
                                     <style> td{border : 1px solid black; width : 400px; height : 35px;}</style>
                                     <table width="100%" border="1" cellspacing="0" cellpadding="0">
-                                        <th> <br> <h4>정류소명</h4> </th>
+                                        <th bgcolor='#EEF9FF'> <br> <h4>정류소명</h4> </th>
                                         {% for item in my_data %}
                                         <tr>
                                             <td>
@@ -153,8 +159,6 @@
                         </form>
                     </div>
                 </div>
-                </div>
-                
             </div>
         </div>
     </div>

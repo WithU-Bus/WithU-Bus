@@ -7,14 +7,36 @@
 <script>
   var container = document.getElementById('map');
 	var options = {
-	center : new kakao.maps.LatLng(35.13500079833994, 129.091494445223), 
+	center : new kakao.maps.LatLng(35.157763, 129.082086), 
 	level : 8
 	};
 	var map = new kakao.maps.Map(container, options);
-	var markerPosition = new kakao.maps.LatLng(35.13500079833994, 129.091494445223);
+	var markerPosition = new kakao.maps.LatLng(35.157763, 129.082086);
 	var marker = new kakao.maps.Marker({
 	position: markerPosition
 	});
+
+  // 지도에 표시된 마커 객체를 가지고 있을 배열입니다
+	var markers = [];
+
+
+	// 배열에 추가된 마커들을 지도에 표시하거나 삭제하는 함수입니다
+	function setMarkers(map) {
+		for (var i = 0; i < markers.length; i++) {
+			markers[i].setMap(map);
+		}            
+	}
+
+	// "마커 보이기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에 표시하는 함수입니다
+	function showMarkers() {
+		setMarkers(map)    
+	}
+
+	// "마커 감추기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에서 삭제하는 함수입니다
+	function hideMarkers() {
+		setMarkers(null);    
+	}
+
   
   // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
   var mapTypeControl = new kakao.maps.MapTypeControl();
@@ -29,9 +51,9 @@
   
 // 선을 구성하는 좌표 배열입니다. 이 좌표들을 이어서 선을 표시합니다
 var linePath = [
-    new kakao.maps.LatLng(35.1774776390538, 129.177071701978),
-    new kakao.maps.LatLng(35.1780094202718, 129.174934695715),
-    new kakao.maps.LatLng(35.1781040024285, 129.174435087895),
+  new kakao.maps.LatLng(35.1774776390538, 129.177071701978),
+  new kakao.maps.LatLng(35.1780094202718, 129.174934695715),
+  new kakao.maps.LatLng(35.1781040024285, 129.174435087895),
 	new kakao.maps.LatLng(35.1781277299766, 129.174117430946),
 	new kakao.maps.LatLng(35.1781090178447, 129.173779436307),
 	new kakao.maps.LatLng(35.1780316603669, 129.173445367776),
@@ -348,16 +370,23 @@ var linePath = [
   // 지도에 선을 표시합니다 
   polyline.setMap(map);
 
+  
+  
   $.ajax({
     url: '/bs1203_map/',
     data: {},
     success: function(res) {
+      var imageSrc = 'https://cdn-icons-png.flaticon.com/128/5390/5390754.png';
       for(var i = 0; i < res.length; i++) {
+        var imageSize = new kakao.maps.Size(35, 35); 
+        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
         var marker = new kakao.maps.Marker({
             map : map, // 마커를 표시할 지도
             position : new kakao.maps.LatLng(res[i].lat, res[i].lng),
             title : res[i].title,
+            image : markerImage
         });
+        markers.push(marker);
       } 
     }
   });

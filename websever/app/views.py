@@ -99,7 +99,7 @@ def contact(request):
         comment = request.POST.get('comment')
         # 발신자주소, 수신자주소, 메시지
         send_mail('WithU.Bus@gmail.com', email, name, comment)
-        return render(request, 'app/홈.html')
+        return render(request, 'app/home.html')
     return render(request, 'app/contact.html')
 
 

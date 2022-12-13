@@ -13,6 +13,20 @@
         level: 5
     };
     var map = new kakao.maps.Map(container, options);
+    
+    var imageSrc = 'https://cdn-icons-png.flaticon.com/128/5390/5390754.png', // 마커이미지의 주소입니다    
+        imageSize = new kakao.maps.Size(45, 45), // 마커이미지의 크기입니다
+        imageOption = {offset: new kakao.maps.Point(23, 42)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+    
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+        markerPosition = new kakao.maps.LatLng({{ station.lat }}, {{ station.lng }});
+
+    var marker = new kakao.maps.Marker({
+        position: markerPosition,
+        image: markerImage // 마커이미지 설정 
+    });
+    marker.setMap(map);
+
 
     // 지도에 표시할 원을 생성합니다
     var circle = new kakao.maps.Circle({
@@ -29,20 +43,7 @@
     // 지도에 원을 표시합니다 
     circle.setMap(map); 
 
-    var imageSrc = 'https://user-images.githubusercontent.com/108312621/204262828-ca8bd591-b0cb-45b0-ba52-f460394038e4.png', // 마커이미지의 주소입니다    
-    imageSize = new kakao.maps.Size(46, 50), // 마커이미지의 크기입니다
-    imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
-    
-    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
-        markerPosition = new kakao.maps.LatLng({{ station.lat }}, {{ station.lng }});
-
-    var marker = new kakao.maps.Marker({
-        position: markerPosition,
-        image: markerImage // 마커이미지 설정 
-    });
-    marker.setMap(map);
-
-    var str_html = "<style>td{border : 1px solid black; width : 100%; height : 40px;}</style><table width='100%' border='2' cellspacing='0' cellpadding='0'><tr><td>구분</td><td>기관명</td><td>도로명주소</td><td>전화번호</td></tr>";
+    var str_html = "<style>td, th{border : 1px solid black; width : 100%; height : 40px; padding: 8px; text-align: center;}</style><table width='100%' border='2' cellspacing='0' cellpadding='0'><tr bgcolor='#EEF9FF'><th>구분</th><th>기관명</th><th>도로명주소</th><th>전화번호</th></tr>";
 
     $.ajax({
         url: '/infra_map_data/',
