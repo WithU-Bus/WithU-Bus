@@ -108,7 +108,7 @@ from email.mime.text import MIMEText
 
 def send_mail(from_email, to_email, name, msg):
     smtp = smtplib.SMTP_SSL('smtp.gmail.com', 465) # 구글에서 제공하는 SMTP 서버 접속 설정
-    smtp.login(from_email, 'lczjrtpmgdtwrjjc') # 인증정보 설정
+    smtp.login(from_email, 'nndyniidewnupqmf') # 인증정보 설정
     #MIMEText('메시지',('메시지 형식'),('문자열 타입'))
     name = name
     msg = MIMEText(msg)
