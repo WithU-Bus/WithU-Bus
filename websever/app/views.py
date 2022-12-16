@@ -112,7 +112,7 @@ def send_mail(from_email, to_email, name, msg):
     #MIMEText('메시지',('메시지 형식'),('문자열 타입'))
     name = name
     msg = MIMEText(msg)
-    msg['Subject'] = '[불편사항]' + '[작성자]' + name + '[회신메일]' + to_email # 제목([불편사항]접수자 이메일주소)
+    msg['Subject'] = '[질문 & 불편사항]' + '[작성자]' + name + '[회신메일]' + to_email # 제목([불편사항]접수자 이메일주소)
     msg['To'] = from_email # 수신 이메일(받는사람 이메일 주소)
     smtp.sendmail(from_email, from_email, msg.as_string())
     smtp.quit()
